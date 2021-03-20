@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MouseLook : MonoBehaviour
+public class LookControl : MonoBehaviour
 {
 
-    public float mouseSensitivity = 200f;
+    float mouseSensitivity = 500f;
     public Transform playerBody;
+    public GameObject gun;
     float xRotation = 0f;
 
     // Start is called before the first frame update
@@ -27,5 +28,8 @@ public class MouseLook : MonoBehaviour
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
 
         playerBody.Rotate(Vector3.up * mouseX);
+
+
+        //gun.transform.rotation = Quaternion.Euler(1, 0, 0) * playerBody.up;
     }
 }
